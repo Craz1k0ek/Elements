@@ -1,10 +1,3 @@
-//
-//  ElementsTests.swift
-//  ElementsTests
-//
-//  Created by Bram Kolkman on 06/12/2020.
-//
-
 import XCTest
 @testable import Elements
 

@@ -1,10 +1,3 @@
-//
-//  ElementsUITests.swift
-//  ElementsUITests
-//
-//  Created by Bram Kolkman on 06/12/2020.
-//
-
 import XCTest
 
 class ElementsUITests: XCTestCase {

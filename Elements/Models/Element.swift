@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 // MARK: Element
 
@@ -16,6 +16,7 @@ struct Element: Decodable, Hashable {
     let number: Int
     let symbol: String
     let name: String
+    let category: Category
     
     let atomicMass: Float
     let density: Float?
@@ -38,10 +39,51 @@ extension Element {
         
         var description: String {
             switch self {
-            case .gas: return "Gas"
-            case .solid: return "Solid"
-            case .liquid: return "Liquid"
+            case .gas:      return "Gas"
+            case .solid:    return "Solid"
+            case .liquid:   return "Liquid"
             }
+        }
+    }
+}
+
+// MARK: Element Category
+
+extension Element {
+    enum Category: Int, CustomStringConvertible, Decodable {
+        case alkaliMetal
+        case alkalineEarthMetal
+        case lanthanide
+        case actinide
+        case transitionMetal
+        case otherMetal
+        case metalloid
+        case otherNonmetal
+        case halogen
+        case nobleGas
+        case unknown
+        
+        var description: String {
+            switch self {
+            case .alkaliMetal:          return "Alkali metal"
+            case .alkalineEarthMetal:   return "Alkaline earth metal"
+            case .lanthanide:           return "Lanthanide"
+            case .actinide:             return "Actinide"
+            case .transitionMetal:      return "Transition metal"
+            case .otherMetal:           return "Other metal"
+            case .metalloid:            return "Metalloid"
+            case .otherNonmetal:        return "Other nonmetal"
+            case .halogen:              return "Halogen"
+            case .nobleGas:             return "Noble gas"
+            case .unknown:              return "Unknown"
+            }
+        }
+        
+        /// A color to group a category.
+        ///
+        /// - Note: Bang operator is fine, as all of these colors are defined.
+        var color: UIColor {
+            return UIColor(named: self.description)!
         }
     }
 }
