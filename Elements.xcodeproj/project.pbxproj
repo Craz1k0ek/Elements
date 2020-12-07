@@ -111,8 +111,8 @@
 			children = (
 				33362BD2257D9F0F001121FA /* Views */,
 				33362BB1257D54DA001121FA /* Models */,
-				33362BAB257D5360001121FA /* Resources */,
 				33362BF3257E5CE2001121FA /* Utility */,
+				33362BAB257D5360001121FA /* Resources */,
 				33362B74257D534E001121FA /* AppDelegate.swift */,
 				33362B7D257D5351001121FA /* Assets.xcassets */,
 				33362B7F257D5351001121FA /* LaunchScreen.storyboard */,

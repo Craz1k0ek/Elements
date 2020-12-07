@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 class ElementDetailVC: UIViewController {
     /// The element to display in detail.
@@ -144,6 +145,6 @@ extension ElementDetailVC: UITableViewDelegate {
         guard let section = Section(rawValue: indexPath.section), section == .source else {
             return
         }
-        UIApplication.shared.open(element.source)
+        present(SFSafariViewController(url: element.source), animated: true)
     }
 }
