@@ -37,7 +37,7 @@ class ElementCell: UITableViewCell {
     fileprivate final func setupSymbolView() {
         symbolBackgroundView                     = UIView()
         symbolBackgroundView.useConstraints      = true
-        symbolBackgroundView.layer.cornerRadius  = 20
+        symbolBackgroundView.layer.cornerRadius  = 19
         symbolBackgroundView.layer.masksToBounds = true
         symbolBackgroundView.layer.borderWidth   = 2
         symbolBackgroundView.layer.borderColor   = UIColor.systemGray.cgColor
@@ -54,7 +54,7 @@ class ElementCell: UITableViewCell {
             symbolBackgroundView.centerYAnchor.constraint(equalTo: centerYAnchor),
             symbolBackgroundView.heightAnchor.constraint(equalToConstant: 38),
             symbolBackgroundView.widthAnchor.constraint(equalToConstant: 38),
-            symbolBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            symbolBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             
             symbolLabel.centerXAnchor.constraint(equalTo: symbolBackgroundView.centerXAnchor),
             symbolLabel.centerYAnchor.constraint(equalTo: symbolBackgroundView.centerYAnchor),
