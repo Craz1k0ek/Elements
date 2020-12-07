@@ -18,6 +18,8 @@
 		33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BDE257E2B08001121FA /* ElementNavigationVC.swift */; };
 		33362BF5257E5CF2001121FA /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BF4257E5CF2001121FA /* UIView+Utility.swift */; };
 		33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BFC257E5D3F001121FA /* ElementCell.swift */; };
+		33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362C0A257E76DF001121FA /* ElementDetailVC.swift */; };
+		33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		33362BDE257E2B08001121FA /* ElementNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNavigationVC.swift; sourceTree = "<group>"; };
 		33362BF4257E5CF2001121FA /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		33362BFC257E5D3F001121FA /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
+		33362C0A257E76DF001121FA /* ElementDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailVC.swift; sourceTree = "<group>"; };
+		33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +158,10 @@
 		33362BD2257D9F0F001121FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33362C18257E9B83001121FA /* Element Detail */,
 				33362BD3257D9F1B001121FA /* ElementListVC.swift */,
-				33362BDE257E2B08001121FA /* ElementNavigationVC.swift */,
 				33362BFC257E5D3F001121FA /* ElementCell.swift */,
+				33362BDE257E2B08001121FA /* ElementNavigationVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +172,15 @@
 				33362BF4257E5CF2001121FA /* UIView+Utility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		33362C18257E9B83001121FA /* Element Detail */ = {
+			isa = PBXGroup;
+			children = (
+				33362C0A257E76DF001121FA /* ElementDetailVC.swift */,
+				33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */,
+			);
+			path = "Element Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +316,11 @@
 				33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */,
 				33362B75257D534E001121FA /* AppDelegate.swift in Sources */,
 				33362BF5257E5CF2001121FA /* UIView+Utility.swift in Sources */,
+				33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */,
 				33362BB3257D54E2001121FA /* Element.swift in Sources */,
 				33362BD4257D9F1B001121FA /* ElementListVC.swift in Sources */,
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
+				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.craz1k0ek.elements;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kolkman.bram.elements;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.craz1k0ek.elements;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kolkman.bram.elements;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

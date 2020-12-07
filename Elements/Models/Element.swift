@@ -39,9 +39,9 @@ extension Element {
         
         var description: String {
             switch self {
-            case .gas:      return "Gas"
-            case .solid:    return "Solid"
-            case .liquid:   return "Liquid"
+            case .gas:    return "Gas"
+            case .solid:  return "Solid"
+            case .liquid: return "Liquid"
             }
         }
     }
@@ -65,17 +65,17 @@ extension Element {
         
         var description: String {
             switch self {
-            case .alkaliMetal:          return "Alkali metal"
-            case .alkalineEarthMetal:   return "Alkaline earth metal"
-            case .lanthanide:           return "Lanthanide"
-            case .actinide:             return "Actinide"
-            case .transitionMetal:      return "Transition metal"
-            case .otherMetal:           return "Other metal"
-            case .metalloid:            return "Metalloid"
-            case .otherNonmetal:        return "Other nonmetal"
-            case .halogen:              return "Halogen"
-            case .nobleGas:             return "Noble gas"
-            case .unknown:              return "Unknown"
+            case .alkaliMetal:        return "Alkali metal"
+            case .alkalineEarthMetal: return "Alkaline earth metal"
+            case .lanthanide:         return "Lanthanide"
+            case .actinide:           return "Actinide"
+            case .transitionMetal:    return "Transition metal"
+            case .otherMetal:         return "Other metal"
+            case .metalloid:          return "Metalloid"
+            case .otherNonmetal:      return "Other nonmetal"
+            case .halogen:            return "Halogen"
+            case .nobleGas:           return "Noble gas"
+            case .unknown:            return "Unknown"
             }
         }
         

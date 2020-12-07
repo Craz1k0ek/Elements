@@ -14,9 +14,9 @@ class ElementCell: UITableViewCell {
     /// The element to display in the cell.
     var element: Element! {
         didSet {
-            symbolBackgroundView.backgroundColor    = element.category.color
-            symbolLabel.text                        = element.symbol
-            nameLabel.text                          = element.name
+            symbolBackgroundView.backgroundColor = element.category.color
+            symbolLabel.text                     = element.symbol
+            nameLabel.text                       = element.name
         }
     }
     
@@ -31,25 +31,25 @@ class ElementCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - View
+    // MARK: - View & Layouts
     
     /// Setup the round symbol view and its label.
     fileprivate final func setupSymbolView() {
-        symbolBackgroundView                        = UIView()
-        symbolBackgroundView.useConstraints         = false
-        symbolBackgroundView.layer.cornerRadius     = 20
-        symbolBackgroundView.layer.masksToBounds    = true
-        symbolBackgroundView.layer.borderWidth      = 2
-        symbolBackgroundView.layer.borderColor      = UIColor.systemGray.cgColor
+        symbolBackgroundView                     = UIView()
+        symbolBackgroundView.useConstraints      = true
+        symbolBackgroundView.layer.cornerRadius  = 20
+        symbolBackgroundView.layer.masksToBounds = true
+        symbolBackgroundView.layer.borderWidth   = 2
+        symbolBackgroundView.layer.borderColor   = UIColor.systemGray.cgColor
+        
+        symbolLabel                = UILabel()
+        symbolLabel.useConstraints = true
+        symbolLabel.textAlignment  = .center
+        symbolLabel.font           = UIFont.systemFont(ofSize: 14, weight: .bold)
+        symbolLabel.textColor      = .darkGray
+        
         addSubview(symbolBackgroundView)
-        
-        symbolLabel                 = UILabel()
-        symbolLabel.useConstraints  = false
-        symbolLabel.textAlignment   = .center
-        symbolLabel.font            = UIFont.systemFont(ofSize: 14, weight: .bold)
-        symbolLabel.textColor       = .darkGray
         symbolBackgroundView.addSubview(symbolLabel)
-        
         NSLayoutConstraint.activate([
             symbolBackgroundView.centerYAnchor.constraint(equalTo: centerYAnchor),
             symbolBackgroundView.heightAnchor.constraint(equalToConstant: 38),
@@ -65,10 +65,10 @@ class ElementCell: UITableViewCell {
     
     /// Setup the name label.
     fileprivate final func setupNameLabel() {
-        nameLabel                   = UILabel()
-        nameLabel.useConstraints    = false
-        addSubview(nameLabel)
+        nameLabel                = UILabel()
+        nameLabel.useConstraints = true
         
+        addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: symbolBackgroundView.trailingAnchor, constant: 16),
