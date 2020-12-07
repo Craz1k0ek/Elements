@@ -21,8 +21,8 @@ class ElementListVC: UIViewController {
         setupSearchBar()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -94,5 +94,11 @@ extension ElementListVC: UISearchResultsUpdating {
                 $0.phase.description.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
+    }
+}
+
+extension ElementListVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        print("Searchbar index changed: \(selectedScope)")
     }
 }
