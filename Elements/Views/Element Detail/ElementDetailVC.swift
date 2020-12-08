@@ -53,16 +53,16 @@ class ElementDetailVC: UIViewController {
 // MARK: - UITableView Data Source & Delegate
 
 extension ElementDetailVC: UITableViewDataSource {
-    enum Section: Int, CaseIterable {
+    enum Section: Int, CaseIterable, CustomStringConvertible {
         case general, weight, temperature, trivia, source
         
-        var title: String? {
+        var description: String {
             switch self {
             case .general:     return "General"
             case .weight:      return "Weight"
             case .temperature: return "Temperature"
             case .trivia:      return "Trivia"
-            default:           return nil
+            default:           return ""
             }
         }
         
@@ -84,7 +84,8 @@ extension ElementDetailVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        Section(rawValue: section)?.title
+        guard let section = Section(rawValue: section) else { return nil }
+        return "\(section)"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

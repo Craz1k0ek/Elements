@@ -31,11 +31,11 @@ class ElementListVC: UIViewController {
     // MARK: - View & Layouts
     
     fileprivate final func setupTableView() {
-        tableView                   = UITableView()
-        tableView.dataSource        = self
-        tableView.delegate          = self
-        tableView.useConstraints    = true
-        tableView.rowHeight         = 50
+        tableView                = UITableView()
+        tableView.dataSource     = self
+        tableView.delegate       = self
+        tableView.useConstraints = true
+        tableView.rowHeight      = 50
         
         tableView.register(ElementCell.self, forCellReuseIdentifier: ElementCell.reuseIdentifier)
         
@@ -49,21 +49,23 @@ class ElementListVC: UIViewController {
     }
     
     fileprivate final func setupSearchBar() {
-        navigationController?.setToolbarHidden(false, animated: false)
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater  = self
-        searchController.searchBar.placeholder = "Search elements"
+        searchController.searchBar.placeholder = "Search by name"
         navigationItem.searchController        = searchController
         definesPresentationContext             = true
     }
     
     fileprivate final func setupToolbar() {
-        let filterToggleButton  = UIBarButtonItem(image: .filterOutline, style: .plain, target: nil, action: nil)
-        let filterOptionsButton = UIBarButtonItem(title: "Filters", style: .plain, target: nil, action: nil)
-        let flexibleBarSpace    = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        toolbarItems = [filterToggleButton, flexibleBarSpace, filterOptionsButton, flexibleBarSpace]
+        navigationController?.setToolbarHidden(false, animated: false)
+        toolbarItems = [UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(didTapFilterToggleButton))]
+    }
+    
+    // MARK: - User interaction
+    
+    @objc fileprivate func didTapFilterToggleButton() {
+        present(ElementNavigationVC(rootViewController: ElementFilterListVC(filterOptions: filterOptions)), animated: true, completion: nil)
     }
 }
 

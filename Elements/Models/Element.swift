@@ -34,7 +34,7 @@ struct Element: Decodable, Hashable {
 // MARK: Element Phase
 
 extension Element {
-    enum Phase: Int, CustomStringConvertible, Decodable {
+    enum Phase: Int, CaseIterable, CustomStringConvertible, Decodable {
         case gas, solid, liquid
         
         var description: String {
@@ -50,7 +50,7 @@ extension Element {
 // MARK: Element Category
 
 extension Element {
-    enum Category: Int, CustomStringConvertible, Decodable {
+    enum Category: Int, CaseIterable, CustomStringConvertible, Decodable {
         case alkaliMetal
         case alkalineEarthMetal
         case lanthanide

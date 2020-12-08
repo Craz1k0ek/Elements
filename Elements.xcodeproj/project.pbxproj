@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3332ECEA257FADA70090842D /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3332ECE9257FADA70090842D /* FilterOptions.swift */; };
+		3332ECF8257FCA690090842D /* ElementFilterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3332ECF7257FCA690090842D /* ElementFilterListVC.swift */; };
 		33362B75257D534E001121FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362B74257D534E001121FA /* AppDelegate.swift */; };
 		33362B7E257D5351001121FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33362B7D257D5351001121FA /* Assets.xcassets */; };
 		33362B81257D5351001121FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33362B7F257D5351001121FA /* LaunchScreen.storyboard */; };
@@ -21,7 +22,6 @@
 		33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BFC257E5D3F001121FA /* ElementCell.swift */; };
 		33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362C0A257E76DF001121FA /* ElementDetailVC.swift */; };
 		33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */; };
-		33D7F8B8257F92C0000AF19F /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		3332ECE9257FADA70090842D /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
+		3332ECF7257FCA690090842D /* ElementFilterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementFilterListVC.swift; sourceTree = "<group>"; };
 		33362B71257D534E001121FA /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33362B74257D534E001121FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33362B7D257D5351001121FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		33362BFC257E5D3F001121FA /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
 		33362C0A257E76DF001121FA /* ElementDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailVC.swift; sourceTree = "<group>"; };
 		33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailCells.swift; sourceTree = "<group>"; };
-		33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +165,7 @@
 				33362C18257E9B83001121FA /* Element Detail */,
 				33362BD3257D9F1B001121FA /* ElementListVC.swift */,
 				33362BFC257E5D3F001121FA /* ElementCell.swift */,
+				3332ECF7257FCA690090842D /* ElementFilterListVC.swift */,
 				33362BDE257E2B08001121FA /* ElementNavigationVC.swift */,
 			);
 			path = Views;
@@ -174,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				33362BF4257E5CF2001121FA /* UIView+Utility.swift */,
-				33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */,
 				3332ECE9257FADA70090842D /* FilterOptions.swift */,
 			);
 			path = Utility;
@@ -326,8 +326,8 @@
 				33362BB3257D54E2001121FA /* Element.swift in Sources */,
 				33362BD4257D9F1B001121FA /* ElementListVC.swift in Sources */,
 				3332ECEA257FADA70090842D /* FilterOptions.swift in Sources */,
+				3332ECF8257FCA690090842D /* ElementFilterListVC.swift in Sources */,
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
-				33D7F8B8257F92C0000AF19F /* UIImage+Utility.swift in Sources */,
 				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
