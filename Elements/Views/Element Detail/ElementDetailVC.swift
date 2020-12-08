@@ -18,6 +18,7 @@ class ElementDetailVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title                = element.name
+        navigationController?.setToolbarHidden(true, animated: false)
         navigationController?.navigationBar.tintColor = .darkGray
         navigationItem.setColors(backgroundColor: element.category.color, titleColor: .darkGray, barButtonColor: .darkGray)
         setupTableView()

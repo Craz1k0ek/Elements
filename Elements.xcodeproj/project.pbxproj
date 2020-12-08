@@ -20,6 +20,7 @@
 		33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BFC257E5D3F001121FA /* ElementCell.swift */; };
 		33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362C0A257E76DF001121FA /* ElementDetailVC.swift */; };
 		33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */; };
+		33D7F8B8257F92C0000AF19F /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		33362BFC257E5D3F001121FA /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
 		33362C0A257E76DF001121FA /* ElementDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailVC.swift; sourceTree = "<group>"; };
 		33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailCells.swift; sourceTree = "<group>"; };
+		33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				33362BF4257E5CF2001121FA /* UIView+Utility.swift */,
+				33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				33362BB3257D54E2001121FA /* Element.swift in Sources */,
 				33362BD4257D9F1B001121FA /* ElementListVC.swift in Sources */,
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
+				33D7F8B8257F92C0000AF19F /* UIImage+Utility.swift in Sources */,
 				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

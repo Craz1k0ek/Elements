@@ -19,10 +19,12 @@ class ElementListVC: UIViewController {
         self.title              = "Elements"
         setupTableView()
         setupSearchBar()
+        setupToolbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setToolbarHidden(false, animated: animated)
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -47,12 +49,21 @@ class ElementListVC: UIViewController {
     }
     
     fileprivate final func setupSearchBar() {
+        navigationController?.setToolbarHidden(false, animated: false)
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater  = self
         searchController.searchBar.placeholder = "Search elements"
         navigationItem.searchController        = searchController
         definesPresentationContext             = true
+    }
+    
+    fileprivate final func setupToolbar() {
+        let filterToggleButton  = UIBarButtonItem(image: .filterOutline, style: .plain, target: nil, action: nil)
+        let filterOptionsButton = UIBarButtonItem(title: "Filters", style: .plain, target: nil, action: nil)
+        let flexibleBarSpace    = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbarItems = [filterToggleButton, flexibleBarSpace, filterOptionsButton, flexibleBarSpace]
     }
 }
 

@@ -3,6 +3,17 @@ import UIKit
 class ElementNavigationVC: UINavigationController {
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
+        setupNavigationBarAppearance()
+        setupToolBarAppearance()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Appearance Setup
+    
+    fileprivate final func setupNavigationBarAppearance() {
         navigationBar.prefersLargeTitles = true
         
         // Used to configure the style of the navigation bar.
@@ -29,8 +40,18 @@ class ElementNavigationVC: UINavigationController {
         navigationBar.tintColor = .white
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    fileprivate final func setupToolBarAppearance() {
+        let toolBarAppearance = UIToolbarAppearance()
+        toolBarAppearance.configureWithOpaqueBackground()
+        
+        let toolBarButtonAppearance = UIBarButtonItemAppearance(style: .plain)
+        toolBarButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor(named: "Accent")!]
+        toolBarAppearance.buttonAppearance     = toolBarButtonAppearance
+        toolBarAppearance.doneButtonAppearance = toolBarButtonAppearance
+        
+        toolbar.standardAppearance = toolBarAppearance
+        toolbar.compactAppearance = toolBarAppearance
+        toolbar.tintColor = UIColor(named: "Accent")!   // Used to style buttons with images, cannot be set at this point
     }
 }
 
