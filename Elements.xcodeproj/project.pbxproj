@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3332ECEA257FADA70090842D /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3332ECE9257FADA70090842D /* FilterOptions.swift */; };
 		33362B75257D534E001121FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362B74257D534E001121FA /* AppDelegate.swift */; };
 		33362B7E257D5351001121FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33362B7D257D5351001121FA /* Assets.xcassets */; };
 		33362B81257D5351001121FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33362B7F257D5351001121FA /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3332ECE9257FADA70090842D /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
 		33362B71257D534E001121FA /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33362B74257D534E001121FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33362B7D257D5351001121FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				33362BF4257E5CF2001121FA /* UIView+Utility.swift */,
 				33D7F8B7257F92C0000AF19F /* UIImage+Utility.swift */,
+				3332ECE9257FADA70090842D /* FilterOptions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */,
 				33362BB3257D54E2001121FA /* Element.swift in Sources */,
 				33362BD4257D9F1B001121FA /* ElementListVC.swift in Sources */,
+				3332ECEA257FADA70090842D /* FilterOptions.swift in Sources */,
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
 				33D7F8B8257F92C0000AF19F /* UIImage+Utility.swift in Sources */,
 				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
