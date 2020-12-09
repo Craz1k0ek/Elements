@@ -22,6 +22,7 @@
 		33362BF5257E5CF2001121FA /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BF4257E5CF2001121FA /* UIView+Utility.swift */; };
 		33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BFC257E5D3F001121FA /* ElementCell.swift */; };
 		33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362C0A257E76DF001121FA /* ElementDetailVC.swift */; };
+		3389AB4A25817175009D3A27 /* ElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389AB4925817175009D3A27 /* ElementViewModel.swift */; };
 		33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		33362BF4257E5CF2001121FA /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		33362BFC257E5D3F001121FA /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
 		33362C0A257E76DF001121FA /* ElementDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailVC.swift; sourceTree = "<group>"; };
+		3389AB4925817175009D3A27 /* ElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementViewModel.swift; sourceTree = "<group>"; };
 		33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 		33362B73257D534E001121FA /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				3389AB482581713C009D3A27 /* View Models */,
 				33362BD2257D9F0F001121FA /* Views */,
 				33362BB1257D54DA001121FA /* Models */,
 				33362BF3257E5CE2001121FA /* Utility */,
@@ -206,6 +209,14 @@
 				33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */,
 			);
 			path = "Element Detail";
+			sourceTree = "<group>";
+		};
+		3389AB482581713C009D3A27 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3389AB4925817175009D3A27 /* ElementViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				3332ECF8257FCA690090842D /* ElementFilterListVC.swift in Sources */,
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
 				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
+				3389AB4A25817175009D3A27 /* ElementViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

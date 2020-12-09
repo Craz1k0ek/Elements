@@ -2,25 +2,25 @@ import UIKit
 import SafariServices
 
 class ElementDetailVC: UIViewController {
-    /// The element to display in detail.
-    let element: Element
+    /// The view model of the controller.
+    let elementViewModel: ElementViewModel
     
     private var tableView: UITableView!
     
     /// Designated initializer.
     /// - Parameter element: The element to display in detail.
-    init(element: Element) {
-        self.element = element
+    init(elementViewModel: ElementViewModel) {
+        self.elementViewModel = elementViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title                = element.name
+        title                = elementViewModel.name
         navigationController?.setToolbarHidden(true, animated: false)
         navigationController?.navigationBar.tintColor = .darkGray
-        navigationItem.setColors(backgroundColor: element.category.color, titleColor: .darkGray, barButtonColor: .darkGray)
+        navigationItem.setColors(backgroundColor: elementViewModel.categoryColor, titleColor: .darkGray, barButtonColor: .darkGray)
         setupTableView()
     }
     
@@ -97,26 +97,26 @@ extension ElementDetailVC: UITableViewDataSource {
         case .general:
             let cell = tableView.dequeueReusableCell(withIdentifier: ElementDetailInfoCell.reuseIdentifier, for: indexPath) as! ElementDetailInfoCell
             switch indexPath.item {
-            case 0: cell.setTitle("Atom number", detail: "\(element.number)")
-            case 1: cell.setTitle("Symbol", detail: element.symbol)
-            case 2: cell.setTitle("Category", detail: "\(element.category)")
+            case 0: cell.setTitle("Atom number", detail: elementViewModel.atomNumber)
+            case 1: cell.setTitle("Symbol", detail: elementViewModel.symbol)
+            case 2: cell.setTitle("Category", detail: elementViewModel.category)
             default: fatalError("No cell configured for section and index path.")
             }
             return cell
         case .weight:
             let cell = tableView.dequeueReusableCell(withIdentifier: ElementDetailInfoCell.reuseIdentifier, for: indexPath) as! ElementDetailInfoCell
             switch indexPath.item {
-            case 0: cell.setTitle("Atomic mass", detail: "\(element.atomicMass) m")
-            case 1: cell.setTitle("Density", detail: element.density == nil ? nil : "\(element.density!) g/cm³")
+            case 0: cell.setTitle("Atomic mass", detail: elementViewModel.atomicMass)
+            case 1: cell.setTitle("Density", detail: elementViewModel.density)
             default: fatalError("No cell configured for section and index path.")
             }
             return cell
         case .temperature:
             let cell = tableView.dequeueReusableCell(withIdentifier: ElementDetailInfoCell.reuseIdentifier, for: indexPath) as! ElementDetailInfoCell
             switch indexPath.item {
-            case 0: cell.setTitle("Boil", detail: element.boil == nil ? nil : "\(element.boil!) K")
-            case 1: cell.setTitle("Melt", detail: element.melt == nil ? nil : "\(element.melt!) K")
-            case 2: cell.setTitle("Phase", detail: "\(element.phase)")
+            case 0: cell.setTitle("Boil", detail: elementViewModel.boil)
+            case 1: cell.setTitle("Melt", detail: elementViewModel.melt)
+            case 2: cell.setTitle("Phase", detail: elementViewModel.phase)
             default: fatalError("No cell configured for section and index path.")
             }
             return cell
@@ -124,12 +124,12 @@ extension ElementDetailVC: UITableViewDataSource {
             switch indexPath.item {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: ElementDetailInfoCell.reuseIdentifier, for: indexPath) as! ElementDetailInfoCell
-                cell.setTitle("Discovered by", detail: element.discoveredBy == nil ? nil : "\(element.discoveredBy!)")
+                cell.setTitle("Discovered by", detail: elementViewModel.discoveredBy)
                 cell.detailTextLabel?.numberOfLines = 0
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: ElementDetailContentCell.reuseIdentifier, for: indexPath) as! ElementDetailContentCell
-                cell.setContent(element.summary)
+                cell.setContent(elementViewModel.summary)
                 return cell
             default: fatalError("No cell configured for section and index path.")
             }
@@ -147,6 +147,6 @@ extension ElementDetailVC: UITableViewDelegate {
         guard let section = Section(rawValue: indexPath.section), section == .source else {
             return
         }
-        present(SFSafariViewController(url: element.source), animated: true)
+        present(SFSafariViewController(url: elementViewModel.sourceURL), animated: true)
     }
 }

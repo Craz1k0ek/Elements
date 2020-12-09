@@ -11,12 +11,12 @@ class ElementCell: UITableViewCell {
     /// The name label.
     var nameLabel: UILabel!
     
-    /// The element to display in the cell.
-    var element: Element! {
+    /// The view model of the cell.
+    var elementViewModel: ElementViewModel! {
         didSet {
-            symbolBackgroundView.backgroundColor = element.category.color
-            symbolLabel.text                     = element.symbol
-            nameLabel.text                       = element.name
+            symbolBackgroundView.backgroundColor = elementViewModel.categoryColor
+            symbolLabel.text                     = elementViewModel.symbol
+            nameLabel.text                       = elementViewModel.name
         }
     }
     

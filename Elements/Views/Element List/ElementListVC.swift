@@ -73,8 +73,8 @@ extension ElementListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell    = tableView.dequeueReusableCell(withIdentifier: ElementCell.reuseIdentifier, for: indexPath) as! ElementCell
-        cell.element = filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ElementCell.reuseIdentifier, for: indexPath) as! ElementCell
+        cell.elementViewModel = ElementViewModel(element: filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item])
         return cell
     }
 }
@@ -82,7 +82,8 @@ extension ElementListVC: UITableViewDataSource {
 extension ElementListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(ElementDetailVC(element: filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item]), animated: true)
+        let elementViewModel = ElementViewModel(element: filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item])
+        navigationController?.pushViewController(ElementDetailVC(elementViewModel: elementViewModel), animated: true)
     }
 }
 
