@@ -23,6 +23,7 @@ class ElementSearchController: UISearchController {
         obscuresBackgroundDuringPresentation = false
         
         searchBar.inputAccessoryView = ElementSearchResultView(totalItemCount: totalItemCount)
+        searchBar.tintColor          = .white
     }
     
     required init?(coder: NSCoder) {

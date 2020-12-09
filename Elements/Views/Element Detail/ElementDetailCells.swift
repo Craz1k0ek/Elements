@@ -43,7 +43,7 @@ class ElementDetailUrlCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: Self.reuseIdentifier)
         accessoryType        = .disclosureIndicator
-        textLabel?.textColor = .link
+        textLabel?.textColor = UIColor(named: "Accent")
     }
     
     required init?(coder: NSCoder) {
