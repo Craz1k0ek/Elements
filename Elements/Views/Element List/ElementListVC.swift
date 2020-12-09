@@ -17,8 +17,9 @@ class ElementListVC: UIViewController {
         filterOptions          = ElementFilterOptions()
         filterOptions.delegate = self
         
+        navigationItem.searchController = ElementSearchController(searchResultsUpdater: self, totalItemCount: Element.all.count)
+        
         setupTableView()
-        setupSearchBar()
         setupToolbar()
     }
     
@@ -36,6 +37,7 @@ class ElementListVC: UIViewController {
         tableView.delegate       = self
         tableView.useConstraints = true
         tableView.rowHeight      = 50
+        tableView.keyboardDismissMode = .onDrag
         
         tableView.register(ElementCell.self, forCellReuseIdentifier: ElementCell.reuseIdentifier)
         
@@ -46,15 +48,6 @@ class ElementListVC: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-    }
-    
-    fileprivate final func setupSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchResultsUpdater  = self
-        searchController.searchBar.placeholder = "Search by name"
-        navigationItem.searchController        = searchController
-        definesPresentationContext             = true
     }
     
     fileprivate final func setupToolbar() {
@@ -112,6 +105,7 @@ extension ElementListVC: ElementFilterOptionsDelegate {
         }.filter {
             options.categories.isEmpty ? true : options.categories.contains($0.category)
         }
+        (navigationItem.searchController as? ElementSearchController)?.setFilteredResultAmount(to: filteredElements.count)
         tableView.reloadSections(IndexSet(integersIn: 0 ..< tableView.numberOfSections), with: .automatic)
     }
 }

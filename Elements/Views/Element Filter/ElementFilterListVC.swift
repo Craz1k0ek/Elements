@@ -92,7 +92,7 @@ extension ElementFilterListVC: UITableViewDataSource {
             guard let category = Element.Category(rawValue: indexPath.item) else { fatalError("Unsupported category: \(indexPath.item).") }
             
             cell.textLabel?.text = "\(category)"
-            cell.imageView?.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(category.color)
+            cell.imageView?.image = UIImage(systemName: "circle.fill")?.withTintColor(category.color, renderingMode: .alwaysOriginal)
             cell.accessoryType = filterOptions.categories.contains(category) ? .checkmark : .none
         }
         return cell
