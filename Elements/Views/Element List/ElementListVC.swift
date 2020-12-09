@@ -3,21 +3,15 @@ import UIKit
 class ElementListVC: UIViewController {
     private var tableView: UITableView!
     
-    /// The filtered elements found when searching.
-    private var filteredElements: [Element] = []
-    
-    /// The filter used to filter the elements list.
-    private var filterOptions: ElementFilterOptions!
+    private var viewModel: ElementListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title                = "Elements"
         
-        filterOptions          = ElementFilterOptions()
-        filterOptions.delegate = self
-        
-        navigationItem.searchController = ElementSearchController(searchResultsUpdater: self, totalItemCount: Element.all.count)
+        viewModel = ElementListViewModel(controller: self)
+        navigationItem.searchController = ElementSearchController(searchResultsUpdater: viewModel, totalItemCount: viewModel.totalItemCount)
         
         setupTableView()
         setupToolbar()
@@ -58,7 +52,13 @@ class ElementListVC: UIViewController {
     // MARK: - User interaction
     
     @objc fileprivate func didTapFilterToggleButton() {
-        present(ElementNavigationVC(rootViewController: ElementFilterListVC(filterOptions: filterOptions)), animated: true, completion: nil)
+        present(ElementNavigationVC(rootViewController: ElementFilterListVC(filterOptions: viewModel.filterOptions)), animated: true, completion: nil)
+    }
+    
+    /// Called by the view model whenever changes have occured.
+    func notifyOfChanges() {
+        (navigationItem.searchController as? ElementSearchController)?.setFilteredResultAmount(to: viewModel.items.count)
+        tableView.reloadSections(IndexSet(integersIn: 0 ..< tableView.numberOfSections), with: .automatic)
     }
 }
 
@@ -68,13 +68,12 @@ extension ElementListVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int { 1 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if filterOptions.isFiltering { return filteredElements.count }
-        return Element.all.count
+        viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ElementCell.reuseIdentifier, for: indexPath) as! ElementCell
-        cell.elementViewModel = ElementViewModel(element: filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item])
+        cell.elementViewModel = viewModel.items[indexPath.item]
         return cell
     }
 }
@@ -82,31 +81,6 @@ extension ElementListVC: UITableViewDataSource {
 extension ElementListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let elementViewModel = ElementViewModel(element: filterOptions.isFiltering ? filteredElements[indexPath.item] : Element.all[indexPath.item])
-        navigationController?.pushViewController(ElementDetailVC(elementViewModel: elementViewModel), animated: true)
-    }
-}
-
-// MARK: - UISearchController
-
-extension ElementListVC: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        filterOptions.toggle(filter: .name(searchController.searchBar.text))
-    }
-}
-
-// MARK: - ElementFilterOptionsDelegate
-
-extension ElementListVC: ElementFilterOptionsDelegate {
-    func elementFilter(_ options: ElementFilterOptions, didChangeFilter filter: ElementFilter) {
-        filteredElements = Element.all.filter {
-            (options.name == nil || options.name!.isEmpty) ? true : $0.name.lowercased().contains(options.name!.lowercased())
-        }.filter {
-            options.phases.isEmpty ? true : options.phases.contains($0.phase)
-        }.filter {
-            options.categories.isEmpty ? true : options.categories.contains($0.category)
-        }
-        (navigationItem.searchController as? ElementSearchController)?.setFilteredResultAmount(to: filteredElements.count)
-        tableView.reloadSections(IndexSet(integersIn: 0 ..< tableView.numberOfSections), with: .automatic)
+        navigationController?.pushViewController(ElementDetailVC(elementViewModel: viewModel.items[indexPath.item]), animated: true)
     }
 }

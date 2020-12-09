@@ -23,6 +23,7 @@
 		33362BFD257E5D3F001121FA /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362BFC257E5D3F001121FA /* ElementCell.swift */; };
 		33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33362C0A257E76DF001121FA /* ElementDetailVC.swift */; };
 		3389AB4A25817175009D3A27 /* ElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389AB4925817175009D3A27 /* ElementViewModel.swift */; };
+		3389AB5225818236009D3A27 /* ElementListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389AB5125818236009D3A27 /* ElementListViewModel.swift */; };
 		33ACCEFE257EAC0100C26724 /* ElementDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		33362BFC257E5D3F001121FA /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
 		33362C0A257E76DF001121FA /* ElementDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailVC.swift; sourceTree = "<group>"; };
 		3389AB4925817175009D3A27 /* ElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementViewModel.swift; sourceTree = "<group>"; };
+		3389AB5125818236009D3A27 /* ElementListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListViewModel.swift; sourceTree = "<group>"; };
 		33ACCEFD257EAC0100C26724 /* ElementDetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3389AB4925817175009D3A27 /* ElementViewModel.swift */,
+				3389AB5125818236009D3A27 /* ElementListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				33362BDF257E2B08001121FA /* ElementNavigationVC.swift in Sources */,
 				33362C0B257E76DF001121FA /* ElementDetailVC.swift in Sources */,
 				3389AB4A25817175009D3A27 /* ElementViewModel.swift in Sources */,
+				3389AB5225818236009D3A27 /* ElementListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
